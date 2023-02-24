@@ -1,0 +1,13 @@
+- hosts: task
+  tasks:
+  - name: install latest apache
+    apt:
+      name: apache2
+      state: latest
+
+  - name: apache start
+    systemd:
+       name: apache2
+       state: started
+       enabled: yes
+
