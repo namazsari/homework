@@ -5,9 +5,19 @@
       name: apache2
       state: latest
 
-  - name: apache start
+  - name: start the apache
     systemd:
        name: apache2
        state: started
        enabled: yes
 
+  - name: install an unzipp
+    apt:
+      name: unzip
+      state: latest
+
+  - name: Unarchive and download the files
+    unarchive:
+      src: https://www.free-css.com/assets/files/free-css-templates/download/page287/cycle.zip
+      dest: /var/www/
+      remote_src: yes
