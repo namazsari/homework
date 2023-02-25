@@ -5,12 +5,6 @@
       name: apache2
       state: latest
 
-  - name: start the apache
-    systemd:
-       name: apache2
-       state: started
-       enabled: yes
-
   - name: install an unzipp
     apt:
       name: unzip
